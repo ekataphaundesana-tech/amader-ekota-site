@@ -11,117 +11,133 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-}
-
-html{
   scroll-behavior:smooth;
 }
 
 body{
   font-family:Arial,"Noto Sans Bengali",sans-serif;
-  background:#f4fff8;
-  color:#123c30;
+  background:#07110d;
+  color:#fff;
   line-height:1.7;
 }
 
-/* HEADER */
 header{
-  background:#123c30;
-  padding:12px 18px;
   position:sticky;
   top:0;
   z-index:1000;
+  background:rgba(5,20,14,.96);
+  border-bottom:1px solid #174b35;
 }
 
 .nav{
   max-width:1150px;
   margin:auto;
+  min-height:75px;
+  padding:10px 20px;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:20px;
 }
 
 .logo{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:12px;
   color:white;
+  text-decoration:none;
   font-size:21px;
   font-weight:bold;
 }
 
 .logo img{
-  width:58px;
-  height:58px;
+  width:52px;
+  height:52px;
   border-radius:50%;
   object-fit:cover;
-  border:3px solid #08b653;
+  border:3px solid #19b76b;
+  background:white;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:20px;
 }
 
 nav a{
-  color:white;
+  color:#ddd;
   text-decoration:none;
-  margin-left:18px;
-  font-size:16px;
+  font-weight:bold;
+  transition:.3s;
 }
 
 nav a:hover{
-  color:#55e58d;
+  color:#20d47a;
 }
 
-/* HERO */
+.donate-btn{
+  background:#08b653;
+  color:white !important;
+  padding:10px 18px;
+  border-radius:25px;
+}
+
 .hero{
-  padding:65px 20px;
+  min-height:620px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
-  background:linear-gradient(135deg,#e8fff1,#ffffff);
+  padding:80px 20px;
+  background:
+    radial-gradient(circle at top,#125d3d,#07110d 65%);
+}
+
+.hero-content{
+  max-width:850px;
 }
 
 .hero h1{
-  font-size:42px;
-  color:#123c30;
-  margin-bottom:12px;
+  font-size:clamp(38px,7vw,72px);
+  margin-bottom:20px;
+  color:#fff;
 }
 
-.hero h3{
-  color:#08b653;
-  font-size:24px;
-  margin-bottom:12px;
+.hero h1 span{
+  color:#20d47a;
 }
 
 .hero p{
-  max-width:750px;
-  margin:auto;
-  font-size:18px;
+  font-size:20px;
+  color:#d5e4dc;
+  margin-bottom:30px;
 }
 
-.hero img{
-  width:100%;
-  max-width:900px;
-  height:360px;
-  object-fit:cover;
-  border-radius:20px;
-  margin-top:30px;
-  box-shadow:0 8px 25px #0002;
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
 }
 
 .btn{
   display:inline-block;
+  padding:13px 25px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
   background:#08b653;
   color:white;
-  text-decoration:none;
-  padding:12px 24px;
-  border-radius:8px;
-  margin:18px 5px 0;
-  font-weight:bold;
 }
 
-.btn:hover{
-  background:#067e3b;
+.btn.secondary{
+  background:transparent;
+  border:1px solid #20d47a;
 }
 
-/* COMMON */
 section{
-  padding:60px 20px;
+  padding:80px 20px;
 }
 
 .container{
@@ -129,57 +145,504 @@ section{
   margin:auto;
 }
 
-h2{
+.section-title{
   text-align:center;
-  font-size:32px;
-  color:#123c30;
-  margin-bottom:35px;
+  margin-bottom:45px;
 }
 
-.text{
-  max-width:850px;
-  margin:auto;
-  text-align:center;
-  font-size:18px;
+.section-title h2{
+  font-size:36px;
+  margin-bottom:10px;
+  color:#20d47a;
 }
 
-/* PROGRAMS */
+.section-title p{
+  color:#b9c9c1;
+}
+
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:22px;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:20px;
 }
 
 .card{
-  background:white;
-  border-radius:15px;
-  padding:18px;
-  box-shadow:0 4px 15px #0002;
+  background:#0d2118;
+  border:1px solid #174b35;
+  padding:28px 20px;
+  border-radius:18px;
+  text-align:center;
   transition:.3s;
 }
 
 .card:hover{
-  transform:translateY(-5px);
+  transform:translateY(-7px);
+  border-color:#20d47a;
 }
 
-.card img{
-  width:100%;
-  height:190px;
-  object-fit:cover;
-  border-radius:12px;
+.icon{
+  font-size:45px;
+  margin-bottom:12px;
 }
 
 .card h3{
-  color:#08a64e;
-  margin:12px 0 5px;
-  font-size:21px;
+  color:#20d47a;
+  margin-bottom:8px;
 }
 
-/* ABOUT */
+.card p{
+  color:#c4d2cb;
+}
+
 .about{
-  background:white;
+  background:#0a1912;
+}
+
+.about-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.about-text h2{
+  font-size:38px;
+  color:#20d47a;
+  margin-bottom:20px;
+}
+
+.about-text p{
+  color:#ccd8d2;
+  font-size:17px;
 }
 
 .stats{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  margin-top:25px;
+}
+
+.stat{
+  background:#10281d;
+  border:1px solid #174b35;
+  border-radius:15px;
+  padding:20px;
+  text-align:center;
+}
+
+.stat strong{
+  display:block;
+  font-size:30px;
+  color:#20d47a;
+}
+
+.activity{
+  background:#07110d;
+}
+
+.activity-card{
+  background:#0d2118;
+  border:1px solid #174b35;
+  border-radius:18px;
+  padding:25px;
+}
+
+.activity-card h3{
+  color:#20d47a;
+  margin-bottom:10px;
+}
+
+.activity-card p{
+  color:#c4d2cb;
+}
+
+.donation{
+  text-align:center;
+  background:linear-gradient(135deg,#0b422a,#082016);
+}
+
+.donation h2{
+  font-size:38px;
+  margin-bottom:15px;
+}
+
+.donation p{
+  max-width:700px;
+  margin:0 auto 25px;
+  color:#d2e1da;
+}
+
+.contact{
+  background:#0a1912;
+  text-align:center;
+}
+
+.contact-box{
+  max-width:700px;
+  margin:auto;
+  background:#10281d;
+  border:1px solid #174b35;
+  border-radius:20px;
+  padding:35px 20px;
+}
+
+.contact-box h2{
+  color:#20d47a;
+  margin-bottom:15px;
+}
+
+.contact-box p{
+  margin:8px 0;
+  color:#d3ded8;
+}
+
+footer{
+  background:#030906;
+  border-top:1px solid #174b35;
+  padding:30px 20px;
+  text-align:center;
+  color:#9eaaa4;
+}
+
+footer strong{
+  color:#20d47a;
+}
+
+@media(max-width:750px){
+
+  .nav{
+    flex-direction:column;
+    padding:15px;
+  }
+
+  nav{
+    width:100%;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+
+  nav a{
+    font-size:14px;
+  }
+
+  .hero{
+    min-height:550px;
+    padding:60px 20px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .about-box{
+    grid-template-columns:1fr;
+  }
+
+  .about-text{
+    text-align:center;
+  }
+
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:450px){
+
+  .logo{
+    font-size:18px;
+  }
+
+  .logo img{
+    width:45px;
+    height:45px;
+  }
+
+  nav{
+    gap:8px;
+  }
+
+  nav a{
+    font-size:13px;
+  }
+
+  .hero h1{
+    font-size:35px;
+  }
+
+  .section-title h2,
+  .about-text h2,
+  .donation h2{
+    font-size:30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+
+    <a href="#home" class="logo">
+      <img src="logo.jpg" alt="আমাদের একতা ফাউন্ডেশন">
+      <span>আমাদের একতা</span>
+    </a>
+
+    <nav>
+      <a href="#home">হোম</a>
+      <a href="#about">আমাদের সম্পর্কে</a>
+      <a href="#work">কার্যক্রম</a>
+      <a href="#donate" class="donate-btn">সহযোগিতা করুন</a>
+      <a href="#contact">যোগাযোগ</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+
+    <h1>
+      আমাদের একতা<br>
+      <span>ফাউন্ডেশন</span>
+    </h1>
+
+    <p>
+      একতার শক্তিতে গড়ি মানবিক সমাজ।
+      মানুষের পাশে দাঁড়ানোই আমাদের প্রধান লক্ষ্য।
+    </p>
+
+    <div class="buttons">
+      <a href="#work" class="btn">আমাদের কার্যক্রম</a>
+      <a href="#donate" class="btn secondary">সহযোগিতা করুন</a>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="work">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>আমাদের কার্যক্রম</h2>
+      <p>মানবতার সেবায় আমাদের বিভিন্ন উদ্যোগ</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">📚</div>
+        <h3>শিক্ষা সহায়তা</h3>
+        <p>
+          সুবিধাবঞ্চিত শিশুদের শিক্ষা উপকরণ ও প্রয়োজনীয় সহায়তা প্রদান।
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🏥</div>
+        <h3>স্বাস্থ্যসেবা</h3>
+        <p>
+          অসহায় মানুষের জন্য স্বাস্থ্য সচেতনতা ও চিকিৎসা সহায়তা।
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🍚</div>
+        <h3>খাদ্য সহায়তা</h3>
+        <p>
+          দরিদ্র ও অসহায় মানুষের মাঝে খাদ্য সহায়তা পৌঁছে দেওয়া।
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>সামাজিক উন্নয়ন</h3>
+        <p>
+          সমাজের মানুষের কল্যাণে বিভিন্ন সামাজিক উদ্যোগ গ্রহণ।
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🌊</div>
+        <h3>দুর্যোগ সহায়তা</h3>
+        <p>
+          বন্যা ও অন্যান্য দুর্যোগে ক্ষতিগ্রস্ত মানুষের পাশে দাঁড়ানো।
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="about" id="about">
+  <div class="container">
+
+    <div class="about-box">
+
+      <div class="about-text">
+        <h2>আমাদের একতার গল্প</h2>
+
+        <p>
+          আমাদের একতা ফাউন্ডেশন মানুষের পাশে দাঁড়ানোর একটি মানবিক উদ্যোগ।
+          সমাজের অসহায়, দরিদ্র ও সুবিধাবঞ্চিত মানুষের জীবনকে একটু সহজ করার
+          লক্ষ্যেই আমাদের পথচলা।
+        </p>
+
+        <p style="margin-top:15px;">
+          আমরা বিশ্বাস করি—একসাথে কাজ করলে একটি সুন্দর ও মানবিক সমাজ গড়ে তোলা সম্ভব।
+        </p>
+
+        <div class="stats">
+
+          <div class="stat">
+            <strong>1000+</strong>
+            উপকারভোগী
+          </div>
+
+          <div class="stat">
+            <strong>200+</strong>
+            শিক্ষা সহায়তা
+          </div>
+
+          <div class="stat">
+            <strong>50+</strong>
+            খাদ্য সহায়তা
+          </div>
+
+          <div class="stat">
+            <strong>20+</strong>
+            সামাজিক উদ্যোগ
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-size:90px;">❤️</div>
+        <h3>মানুষের পাশে সর্বদা</h3>
+        <p>
+          মানবতার সেবায় একসাথে এগিয়ে চলি।
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="activity">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>আমাদের উদ্যোগ</h2>
+      <p>মানুষের কল্যাণে পরিচালিত কার্যক্রম</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="activity-card">
+        <h3>📚 শিক্ষা উপকরণ বিতরণ</h3>
+        <p>
+          সুবিধাবঞ্চিত শিক্ষার্থীদের মাঝে প্রয়োজনীয় শিক্ষা উপকরণ বিতরণ।
+        </p>
+      </div>
+
+      <div class="activity-card">
+        <h3>🍚 খাদ্য সহায়তা কর্মসূচি</h3>
+        <p>
+          অসহায় ও দরিদ্র পরিবারের মাঝে খাদ্যসামগ্রী বিতরণ।
+        </p>
+      </div>
+
+      <div class="activity-card">
+        <h3>🏥 ফ্রি মেডিকেল ক্যাম্প</h3>
+        <p>
+          মানুষের মাঝে স্বাস্থ্য সচেতনতা ও চিকিৎসা সহায়তা প্রদান।
+        </p>
+      </div>
+
+      <div class="activity-card">
+        <h3>🌊 বন্যার্তদের সহায়তা</h3>
+        <p>
+          দুর্যোগে ক্ষতিগ্রস্ত পরিবারের পাশে প্রয়োজনীয় সহায়তা নিয়ে দাঁড়ানো।
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="donation" id="donate">
+
+  <div class="container">
+
+    <h2>সহযোগিতা করুন ❤️</h2>
+
+    <p>
+      আপনার ছোট একটি সহযোগিতা একজন অসহায় মানুষের জীবনে বড় পরিবর্তন
+      আনতে পারে। আসুন মানবতার সেবায় একসাথে এগিয়ে আসি।
+    </p>
+
+    <a href="#contact" class="btn">
+      যোগাযোগ করুন
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <div class="contact-box">
+
+      <h2>যোগাযোগ</h2>
+
+      <p>আমাদের একতা ফাউন্ডেশন</p>
+
+      <p>
+        মানবতার সেবায় একসাথে
+      </p>
+
+      <p>
+        📞 যোগাযোগের জন্য ফাউন্ডেশনের নির্ধারিত নম্বরে যোগাযোগ করুন।
+      </p>
+
+      <br>
+
+      <a href="#home" class="btn">
+        হোমে ফিরে যান
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+  © ২০২৬ <strong>আমাদের একতা ফাউন্ডেশন</strong> — মানবতার সেবায় একসাথে
+</footer>
+
+</body>
+</html>
